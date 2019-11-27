@@ -183,6 +183,45 @@ class LinkedList{
     }
     this.insertBefore(currNode.value, newValue) 
   }
+
+  reverseIteratively(){
+
+    if(this.isEmpty())
+      return;
+
+    if(this.length === 1){
+      return this.head;
+    }
+
+    let current = this.head;
+    let reverseList = new LinkedList;
+    // find last node
+    while(current.next){
+      reverseList.insertFirst(current.value);
+      current = current.next;
+    }
+    reverseList.insertFirst(current.value);
+    this.head = reverseList.head;
+  }
+
+  reverseRecursively(current = this.head, reverseList = new LinkedList){
+
+    if(this.isEmpty())
+      return;
+
+    if(this.length === 1){
+      return this.head;
+    }
+
+    if(!current.next){
+      reverseList.insertFirst(current.value);
+      this.head = reverseList.head;
+      return;
+    }
+
+    reverseList.insertFirst(current.value);
+    this.reverseRecursively(current.next, reverseList);
+  }
 }
 
 module.exports = LinkedList;
