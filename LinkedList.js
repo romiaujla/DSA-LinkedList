@@ -223,7 +223,10 @@ class LinkedList{
     this.reverseRecursively(current.next, reverseList);
   }
 
+  
+  
   thirdLastItem(){
+    // An algorithm to find the 3rd element from the end of a linked list. Without using the length property.
 
     if(this.isEmpty())
       return `List is empty`;
@@ -247,13 +250,34 @@ class LinkedList{
       return this.head.value;
     } else if(currPosition < 2){
       return `List has less than three items`
-    } else{
-      return thirdLastNode.next.value;
+    } 
+    
+    return thirdLastNode.next.value;
+  }
+
+  middleOfList(){
+    // an algorithm to find the middle element of a linked list. 
+
+    if(this.isEmpty()){
+      return `List is empty`;
     }
 
-    console.log(thirdLastNode.value);
+    let currNode = this.head;
+    let currPosition = 0;
+    let middleNode = this.head;
 
+    while(currNode.next){
+      // Move the middle pointer only when 
+      // you will have moved the current poitner 
+      // by two places
+      if(currPosition % 2 === 0)
+        middleNode = middleNode.next;
 
+      currNode = currNode.next;
+      currPosition++;
+    }    
+
+    return middleNode.value;
   }
 }
 

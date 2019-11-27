@@ -41,6 +41,8 @@ function main(){
   console.log(`\n\nList after Reversing Recursively\n`, SLL.display());
   
   console.log(`\n\nThird Last Item in the list: `, SLL.thirdLastItem());
+
+  console.log(`\n\nMiddle of the list: `, SLL.middleOfList());
 }
 
 main();
