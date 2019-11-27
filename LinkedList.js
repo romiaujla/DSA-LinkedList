@@ -222,6 +222,39 @@ class LinkedList{
     reverseList.insertFirst(current.value);
     this.reverseRecursively(current.next, reverseList);
   }
+
+  thirdLastItem(){
+
+    if(this.isEmpty())
+      return `List is empty`;
+    
+    let thirdLastNode;
+    let current = this.head;
+    let currPosition = 0;
+
+    while(current.next){
+      if(currPosition === 2){
+        thirdLastNode = this.head;
+      }
+      if(currPosition > 2){
+        thirdLastNode = thirdLastNode.next;
+      }
+      current = current.next
+      currPosition++;
+    }
+
+    if(currPosition === 2){
+      return this.head.value;
+    } else if(currPosition < 2){
+      return `List has less than three items`
+    } else{
+      return thirdLastNode.next.value;
+    }
+
+    console.log(thirdLastNode.value);
+
+
+  }
 }
 
 module.exports = LinkedList;

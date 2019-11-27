@@ -31,7 +31,7 @@ function main(){
   console.log(`Using the insertAt() method insert Kat in the 3rd position of the list.`, SLL.display());
 
   // Remove Tauhida from the list.
-  console.log(`Removing Tauhida from the list\n`, SLL.removeNodeUsingValue(`Tauhida`));
+  console.log(`\nRemoving Tauhida from the list\n`, SLL.removeNodeUsingValue(`Tauhida`));
 
 
   SLL.reverseIteratively();
@@ -39,6 +39,8 @@ function main(){
 
   SLL.reverseRecursively();
   console.log(`\n\nList after Reversing Recursively\n`, SLL.display());
+  
+  console.log(`\n\nThird Last Item in the list: `, SLL.thirdLastItem());
 }
 
 main();
