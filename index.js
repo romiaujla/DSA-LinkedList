@@ -32,6 +32,13 @@ function main(){
 
   // Remove Tauhida from the list.
   console.log(`Removing Tauhida from the list\n`, SLL.removeNodeUsingValue(`Tauhida`));
+
+
+  SLL.reverseIteratively();
+  console.log(`\n\nList after Reversing Iteratively\n`, SLL.display());
+
+  SLL.reverseRecursively();
+  console.log(`\n\nList after Reversing Recursively\n`, SLL.display());
 }
 
 main();
